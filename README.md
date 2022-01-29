@@ -31,6 +31,8 @@ CREATE TABLE price_index_history (
   "updatedAt" timestamp not null default NOW()
 )
 ```
+Be sure to index the date column so SQL doesnt have to search 5 million rows every time:
+`CREATE INDEX idx_price_index_history_date on price_index_history(date);`
 
 The data has already been compiled. I have included the source code that compiled the data to support future datasets or other currencies. (CryptoDataDownload also provides a few less significant pairs)
 

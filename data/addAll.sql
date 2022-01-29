@@ -18,3 +18,6 @@
 \i price_e1a8a029.sql
 \echo -> Processing: 10 of 10
 \i price_f6491a81.sql
+
+-- improve the speed of lookups
+CREATE INDEX idx_price_index_history_date on price_index_history(date);
